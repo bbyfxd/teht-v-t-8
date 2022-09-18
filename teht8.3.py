@@ -1,3 +1,13 @@
+import mysql.connector
+
+connection = mysql.connector.connect(
+         host='127.0.0.1',
+         port= 3306,
+         database='flight_game',
+         user='root',
+         password='1999',
+         autocommit=True
+         )
 def haku():
     icao = input("Syötä lentokentän ICAO-koodi: ")
     sql = "select latitude_deg, longitude_deg from airport where gps_code =" + icao + ""
